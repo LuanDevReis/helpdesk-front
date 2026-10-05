@@ -34,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
+    
 
     //forms
     FormsModule,
@@ -42,6 +42,7 @@ import { HttpClientModule } from '@angular/common/http';
     //Requisições HTTP
     HttpClientModule,
     //Angular Material
+    MatButtonModule,
     MatFormFieldModule,
     MatPaginatorModule,
     MatCheckboxModule,
