@@ -29,6 +29,9 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { ToastModule } from 'primeng/toast';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -46,6 +49,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    
     
 
     //forms
@@ -68,6 +72,11 @@ import { LoginComponent } from './components/login/login.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    ToastrModule.forRoot({
+  timeOut: 4000,
+  closeButton: true,
+  progressBar: true
+})
   ],
   providers: [],
   bootstrap: [AppComponent]
