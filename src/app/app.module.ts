@@ -31,6 +31,7 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
 import { LoginComponent } from './components/login/login.component';
 import { ToastModule } from 'primeng/toast';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthInterceptor, AuthInterceptorProviders } from './interceptors/auth.interceptor';
 
 
 
@@ -78,7 +79,7 @@ import { ToastrModule } from 'ngx-toastr';
   progressBar: true
 })
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
