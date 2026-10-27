@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./tecnico-create.component.css']
 })
 export class TecnicoCreateComponent {
+checked: any;
 
 }
