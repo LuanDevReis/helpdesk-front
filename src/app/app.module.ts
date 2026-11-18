@@ -23,18 +23,18 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-//Componentes do projeto
+// Componentes do projeto
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
-import { AuthInterceptor, AuthInterceptorProviders } from './interceptors/auth.interceptor';
+import { AuthInterceptorProviders } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 
-
-
+// 1. ADICIONE ESTE IMPORT DO NGX-MASK
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -45,21 +45,17 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     TecnicoListComponent,
     LoginComponent,
     TecnicoCreateComponent
-    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    
-    
-
-    //forms
+    // forms
     FormsModule,
     ReactiveFormsModule,
-    //Requisições HTTP
+    // Requisições HTTP
     HttpClientModule,
-    //Angular Material
+    // Angular Material
     MatButtonModule,
     MatFormFieldModule,
     MatPaginatorModule,
@@ -75,12 +71,19 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
     MatListModule,
     MatCardModule,
     ToastrModule.forRoot({
-  timeOut: 4000,
-  closeButton: true,
-  progressBar: true
-})
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true
+    }),
+    // 2. ADICIONE A DIRETIVA E O PIPE AQUI NOS IMPORTS
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
-  providers: [AuthInterceptorProviders],
+  providers: [
+    AuthInterceptorProviders,
+    // 3. ADICIONE O PROVIDER AQUI
+    provideNgxMask()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
